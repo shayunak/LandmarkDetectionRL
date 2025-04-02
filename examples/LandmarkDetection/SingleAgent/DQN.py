@@ -16,6 +16,7 @@ import sys
 import time
 import argparse
 from collections import deque
+import cv2
 
 import tensorflow as tf
 from medical import MedicalPlayer, FrameStack
@@ -36,7 +37,7 @@ from tensorpack import (PredictConfig, OfflinePredictor, get_model_loader,
 
 ###############################################################################
 # BATCH SIZE USED IN NATURE PAPER IS 32 - MEDICAL IS 256
-BATCH_SIZE = 48
+BATCH_SIZE = 32
 # BREAKOUT (84,84) - MEDICAL 2D (60,60) - MEDICAL 3D (26,26,26)
 #IMAGE_SIZE = (45, 45, 45)
 IMAGE_SIZE = (9, 9, 9)
@@ -46,7 +47,7 @@ FRAME_HISTORY = 4
 # the frequency of updating the target network
 UPDATE_FREQ = 4
 # DISCOUNT FACTOR - NATURE (0.99) - MEDICAL (0.9)
-GAMMA = 0.9 #0.99
+GAMMA = 0.99 #0.99
 # REPLAY MEMORY SIZE - NATURE (1e6) - MEDICAL (1e5 view-patches)
 MEMORY_SIZE = 1e6#5
 # consume at least 1e6 * 27 * 27 * 27 bytes
@@ -57,6 +58,8 @@ STEPS_PER_EPOCH = 10000 // UPDATE_FREQ * 10
 EPOCHS_PER_EVAL = 2
 # the number of episodes to run during evaluation
 EVAL_EPISODE = 50
+#Number of Epochs to run algorithm on
+NUMBER_OF_EPOCHS = 10 #1000
 
 ###############################################################################
 
@@ -82,6 +85,7 @@ class Model(DQNModel):
     def _get_DQN_prediction(self, image):
         """ image: [0,255]
 
+        
         :returns predicted Q values"""
         # normalize image values to [0, 1]
         image = image / 255.0
@@ -171,8 +175,7 @@ def get_config(files_list):
             HumanHyperParamSetter('learning_rate'),
         ],
         steps_per_epoch=STEPS_PER_EPOCH,
-        #max_epoch=1000,
-        max_epoch=10,
+        max_epoch=NUMBER_OF_EPOCHS,
     )
 
 
