@@ -38,7 +38,8 @@ from tensorpack import (PredictConfig, OfflinePredictor, get_model_loader,
 # BATCH SIZE USED IN NATURE PAPER IS 32 - MEDICAL IS 256
 BATCH_SIZE = 48
 # BREAKOUT (84,84) - MEDICAL 2D (60,60) - MEDICAL 3D (26,26,26)
-IMAGE_SIZE = (45, 45, 45)
+#IMAGE_SIZE = (45, 45, 45)
+IMAGE_SIZE = (9, 9, 9)
 # how many frames to keep
 # in other words, how many observations the network can see
 FRAME_HISTORY = 4
@@ -47,7 +48,7 @@ UPDATE_FREQ = 4
 # DISCOUNT FACTOR - NATURE (0.99) - MEDICAL (0.9)
 GAMMA = 0.9 #0.99
 # REPLAY MEMORY SIZE - NATURE (1e6) - MEDICAL (1e5 view-patches)
-MEMORY_SIZE = 1e5#6
+MEMORY_SIZE = 1e6#5
 # consume at least 1e6 * 27 * 27 * 27 bytes
 INIT_MEMORY_SIZE = MEMORY_SIZE // 20 #5e4
 # each epoch is 100k played frames
@@ -170,7 +171,8 @@ def get_config(files_list):
             HumanHyperParamSetter('learning_rate'),
         ],
         steps_per_epoch=STEPS_PER_EPOCH,
-        max_epoch=1000,
+        #max_epoch=1000,
+        max_epoch=10,
     )
 
 
