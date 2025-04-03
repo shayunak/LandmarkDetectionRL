@@ -1,0 +1,129 @@
+[32m[0402 23:41:40 @logger.py:90][0m Argv: DQN.py --task train --algo DQN --gpu 2 --files ./data/filenames/image_files.txt ./data/filenames/landmark_files.txt --logDir ./logs/ --name apr2
+[32m[0402 23:41:40 @expreplay.py:157][0m Number of Legal actions: 6
+[32m[0402 23:41:40 @param.py:208][0m Use ./logs/apr2/hyper.txt to set hyperparam: 'learning_rate'.
+[32m[0402 23:41:40 @input_source.py:223][0m Setting up the queue 'QueueInput/input_queue' for CPU prefetching ...
+[32m[0402 23:41:40 @trainers.py:47][0m Building graph for a single training tower ...
+[32m[0402 23:41:40 @registry.py:135][0m conv0 input: [None, 9, 9, 9, 4]
+[32m[0402 23:41:40 @registry.py:143][0m conv0 output: [None, 9, 9, 9, 32]
+[32m[0402 23:41:40 @registry.py:135][0m pool0 input: [None, 9, 9, 9, 32]
+[32m[0402 23:41:40 @registry.py:143][0m pool0 output: [None, 4, 4, 4, 32]
+[32m[0402 23:41:40 @registry.py:135][0m conv1 input: [None, 4, 4, 4, 32]
+[32m[0402 23:41:41 @registry.py:143][0m conv1 output: [None, 4, 4, 4, 32]
+[32m[0402 23:41:41 @registry.py:135][0m pool1 input: [None, 4, 4, 4, 32]
+[32m[0402 23:41:41 @registry.py:143][0m pool1 output: [None, 2, 2, 2, 32]
+[32m[0402 23:41:41 @registry.py:135][0m conv2 input: [None, 2, 2, 2, 32]
+[32m[0402 23:41:41 @registry.py:143][0m conv2 output: [None, 2, 2, 2, 64]
+[32m[0402 23:41:41 @registry.py:135][0m pool2 input: [None, 2, 2, 2, 64]
+[32m[0402 23:41:41 @registry.py:143][0m pool2 output: [None, 1, 1, 1, 64]
+[32m[0402 23:41:41 @registry.py:135][0m conv3 input: [None, 1, 1, 1, 64]
+[32m[0402 23:41:41 @registry.py:143][0m conv3 output: [None, 1, 1, 1, 64]
+[32m[0402 23:41:41 @registry.py:135][0m fc0 input: [None, 1, 1, 1, 64]
+[32m[0402 23:41:41 @registry.py:143][0m fc0 output: [None, 512]
+[32m[0402 23:41:41 @registry.py:135][0m fc1 input: [None, 512]
+[32m[0402 23:41:41 @registry.py:143][0m fc1 output: [None, 256]
+[32m[0402 23:41:41 @registry.py:135][0m fc2 input: [None, 256]
+[32m[0402 23:41:41 @registry.py:143][0m fc2 output: [None, 128]
+[32m[0402 23:41:41 @registry.py:135][0m fct input: [None, 128]
+[32m[0402 23:41:41 @registry.py:143][0m fct output: [None, 6]
+[32m[0402 23:41:41 @registry.py:135][0m target/conv0 input: [None, 9, 9, 9, 4]
+[32m[0402 23:41:41 @registry.py:143][0m target/conv0 output: [None, 9, 9, 9, 32]
+[32m[0402 23:41:41 @registry.py:135][0m target/pool0 input: [None, 9, 9, 9, 32]
+[32m[0402 23:41:41 @registry.py:143][0m target/pool0 output: [None, 4, 4, 4, 32]
+[32m[0402 23:41:41 @registry.py:135][0m target/conv1 input: [None, 4, 4, 4, 32]
+[32m[0402 23:41:41 @registry.py:143][0m target/conv1 output: [None, 4, 4, 4, 32]
+[32m[0402 23:41:41 @registry.py:135][0m target/pool1 input: [None, 4, 4, 4, 32]
+[32m[0402 23:41:41 @registry.py:143][0m target/pool1 output: [None, 2, 2, 2, 32]
+[32m[0402 23:41:41 @registry.py:135][0m target/conv2 input: [None, 2, 2, 2, 32]
+[32m[0402 23:41:41 @registry.py:143][0m target/conv2 output: [None, 2, 2, 2, 64]
+[32m[0402 23:41:41 @registry.py:135][0m target/pool2 input: [None, 2, 2, 2, 64]
+[32m[0402 23:41:41 @registry.py:143][0m target/pool2 output: [None, 1, 1, 1, 64]
+[32m[0402 23:41:41 @registry.py:135][0m target/conv3 input: [None, 1, 1, 1, 64]
+[32m[0402 23:41:42 @registry.py:143][0m target/conv3 output: [None, 1, 1, 1, 64]
+[32m[0402 23:41:42 @registry.py:135][0m target/fc0 input: [None, 1, 1, 1, 64]
+[32m[0402 23:41:42 @registry.py:143][0m target/fc0 output: [None, 512]
+[32m[0402 23:41:42 @registry.py:135][0m target/fc1 input: [None, 512]
+[32m[0402 23:41:42 @registry.py:143][0m target/fc1 output: [None, 256]
+[32m[0402 23:41:42 @registry.py:135][0m target/fc2 input: [None, 256]
+[32m[0402 23:41:42 @registry.py:143][0m target/fc2 output: [None, 128]
+[32m[0402 23:41:42 @registry.py:135][0m target/fct input: [None, 128]
+[32m[0402 23:41:42 @registry.py:143][0m target/fct output: [None, 6]
+[32m[0402 23:41:42 @gradproc.py:79][0m [5m[31mWRN[0m No gradient w.r.t 20 trainable variables: target/conv0/W, target/conv0/b, target/conv0/alpha, target/conv1/W, target/conv1/b, target/conv1/alpha, target/conv2/W, target/conv2/b, target/conv2/alpha, target/conv3/W, target/conv3/b, target/conv3/alpha, target/fc0/W, target/fc0/b, target/fc1/W, target/fc1/b, target/fc2/W, target/fc2/b, target/fct/W, target/fct/b
+[32m[0402 23:41:43 @model_utils.py:67][0m [36mList of Trainable Variables: 
+[0mname                  shape                #elements
+--------------------  -----------------  -----------
+conv0/W:0             [5, 5, 5, 4, 32]         16000
+conv0/b:0             [32]                        32
+conv0/alpha:0         []                           1
+conv1/W:0             [5, 5, 5, 32, 32]       128000
+conv1/b:0             [32]                        32
+conv1/alpha:0         []                           1
+conv2/W:0             [4, 4, 4, 32, 64]       131072
+conv2/b:0             [64]                        64
+conv2/alpha:0         []                           1
+conv3/W:0             [3, 3, 3, 64, 64]       110592
+conv3/b:0             [64]                        64
+conv3/alpha:0         []                           1
+fc0/W:0               [64, 512]                32768
+fc0/b:0               [512]                      512
+fc1/W:0               [512, 256]              131072
+fc1/b:0               [256]                      256
+fc2/W:0               [256, 128]               32768
+fc2/b:0               [128]                      128
+fct/W:0               [128, 6]                   768
+fct/b:0               [6]                          6
+target/conv0/W:0      [5, 5, 5, 4, 32]         16000
+target/conv0/b:0      [32]                        32
+target/conv0/alpha:0  []                           1
+target/conv1/W:0      [5, 5, 5, 32, 32]       128000
+target/conv1/b:0      [32]                        32
+target/conv1/alpha:0  []                           1
+target/conv2/W:0      [4, 4, 4, 32, 64]       131072
+target/conv2/b:0      [64]                        64
+target/conv2/alpha:0  []                           1
+target/conv3/W:0      [3, 3, 3, 64, 64]       110592
+target/conv3/b:0      [64]                        64
+target/conv3/alpha:0  []                           1
+target/fc0/W:0        [64, 512]                32768
+target/fc0/b:0        [512]                      512
+target/fc1/W:0        [512, 256]              131072
+target/fc1/b:0        [256]                      256
+target/fc2/W:0        [256, 128]               32768
+target/fc2/b:0        [128]                      128
+target/fct/W:0        [128, 6]                   768
+target/fct/b:0        [6]                          6[36m
+Number of trainable variables: 40
+Number of parameters (elements): 1168276
+Storage space needed for all trainable variables: 4.46MB[0m
+[32m[0402 23:41:43 @base.py:209][0m Setup callbacks graph ...
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv0/W <- conv0/W
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv0/b <- conv0/b
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv0/alpha <- conv0/alpha
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv1/W <- conv1/W
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv1/b <- conv1/b
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv1/alpha <- conv1/alpha
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv2/W <- conv2/W
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv2/b <- conv2/b
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv2/alpha <- conv2/alpha
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv3/W <- conv3/W
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv3/b <- conv3/b
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/conv3/alpha <- conv3/alpha
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/fc0/W <- fc0/W
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/fc0/b <- fc0/b
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/fc1/W <- fc1/W
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/fc1/b <- fc1/b
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/fc2/W <- fc2/W
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/fc2/b <- fc2/b
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/fct/W <- fct/W
+[32m[0402 23:41:43 @DQNModel.py:202][0m target/fct/b <- fct/b
+[32m[0402 23:41:43 @tower.py:140][0m Building graph for predict tower 'tower-pred-0' on device /gpu:0 ...
+[32m[0402 23:41:43 @summary.py:47][0m [MovingAverageSummary] 22 operations in collection 'MOVING_SUMMARY_OPS' will be run with session hooks.
+[32m[0402 23:41:43 @summary.py:94][0m Summarizing collection 'summaries' of size 59.
+[32m[0402 23:41:43 @base.py:230][0m Creating the session ...
+[32m[0402 23:41:44 @base.py:236][0m Initializing the session ...
+[32m[0402 23:41:44 @base.py:243][0m Graph Finalized.
+[32m[0402 23:41:44 @concurrency.py:37][0m Starting EnqueueThread QueueInput/input_queue ...
+[32m[0402 23:41:44 @graph.py:73][0m Running Op RunOp/update_target_network ...
+[32m[0402 23:41:44 @expreplay.py:182][0m Populating replay memory with epsilon=1.0 ...
+[32m[0402 23:41:49 @param.py:158][0m [HyperParamSetter] At global_step=0, exploration is set to 1.000000
+[32m[0402 23:41:49 @base.py:275][0m Start Epoch 1 ...
+[32m[0403 00:01:38 @graph.py:73][0m Running Op RunOp/update_target_network ...
