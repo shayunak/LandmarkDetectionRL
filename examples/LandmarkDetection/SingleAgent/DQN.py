@@ -37,10 +37,10 @@ from tensorpack import (PredictConfig, OfflinePredictor, get_model_loader,
 
 ###############################################################################
 # BATCH SIZE USED IN NATURE PAPER IS 32 - MEDICAL IS 256
-BATCH_SIZE = 32
+BATCH_SIZE = 48
 # BREAKOUT (84,84) - MEDICAL 2D (60,60) - MEDICAL 3D (26,26,26)
 #IMAGE_SIZE = (45, 45, 45)
-IMAGE_SIZE = (9, 9, 9)
+IMAGE_SIZE = (13, 13, 13)
 # how many frames to keep
 # in other words, how many observations the network can see
 FRAME_HISTORY = 4
