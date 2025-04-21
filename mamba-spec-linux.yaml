@@ -83,4 +83,4 @@ dependencies:
       - wrapt==1.16.0
       - zipp==3.6.0
       - rl-medical==0.1
-prefix: /home/zhou.3132/miniforge3/envs/py36-landmark
+prefix: /home/<>/miniforge3/envs/py36-landmark
