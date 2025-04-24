@@ -2,11 +2,15 @@
 
 Deep Reinforcement Learning (DRL) agents applied to medical images
 
+This is a fork from `https://github.com/amiralansary/rl-medical.git`
+
 ## Examples
 
 - [Landmark detection using different DQN variants for a single agent implemented using Tensorpack](examples/LandmarkDetection/SingleAgent)
 - [Landmark detection for multiple agents using different communication variants implemented in PyTorch](examples/LandmarkDetection/MultiAgent)
 - [Automatic view planning using different DQN variants](examples/AutomaticViewPlanning/DQN)
+
+Our project basically uses the the code in [Landmark detection using different DQN variants for a single agent implemented using Tensorpack](examples/LandmarkDetection/SingleAgent) to experiment with the hyperparameters. 
 
 
 ## Installation
