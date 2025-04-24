@@ -12,7 +12,9 @@ This is a fork from `https://github.com/amiralansary/rl-medical.git`
 
 Our project basically uses the the code in [Landmark detection using different DQN variants for a single agent implemented using Tensorpack](examples/LandmarkDetection/SingleAgent) to experiment with the hyperparameters. 
 
+We used the mamba environment described the `.yaml` file.
 
+<!--
 ## Installation
 
 ### Dependencies
@@ -67,3 +69,17 @@ If you use this code in your research, please cite these paper:
   organization={Springer}
 }
  ```
+ -->
+ 
+ The original code is for the following paper 
+ ```
+@article{alansary2019evaluating,
+  title={{Evaluating Reinforcement Learning Agents for Anatomical Landmark Detection}},
+  author={Alansary, Amir and Oktay, Ozan and Li, Yuanwei and Le Folgoc, Loic and
+          Hou, Benjamin and Vaillant, Ghislain and Kamnitsas, Konstantinos and
+          Vlontzos, Athanasios and Glocker, Ben and Kainz, Bernhard and Rueckert, Daniel},
+  journal={Medical Image Analysis},
+  year={2019},
+  publisher={Elsevier}
+}
+```
